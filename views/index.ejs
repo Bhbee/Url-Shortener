@@ -9,10 +9,12 @@
 </head>
 <body>
   <div class="container">
-    <h1>URL Shrinker</h1>
-    <form action="/shortUrls" method="POST" class="my-4 form-inline">
-      <label for="fullUrl" class="sr-only">Url</label>
-      <input required placeholder="Url" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
+    <h1 class="my-5" >URL Shrinker</h1>
+    <form action="/shortUrls" method="POST" class="my-5 form-inline">
+      <label for="fullUrl" class="sr-only">Full Url</label>
+      <input required placeholder="Enter Full Url" type="url" name="fullUrl" id="fullUrl" class="form-control col mr-2">
+      <label for="fullUrl" class="sr-only">Short Url</label>
+      <input required placeholder="Enter customized short Url" type="text" name="shortUrl" id="shortUrl" class="form-control col mr-2">
       <button class="btn btn-success" type="submit">Shrink</button>
     </form>
     
@@ -21,7 +23,6 @@
         <tr>
           <th>Full URL</th>
           <th>Short URL</th>
-          <th>Clicks</th>
         </tr>
       </thead>
       <tbody>
@@ -29,7 +30,6 @@
           <tr>
             <td><a href="<%= shortUrl.full %>"><%= shortUrl.full %></a></td>
             <td><a href="<%= shortUrl.short %>"><%= shortUrl.short %></a></td>
-            <td><%= shortUrl.clicks %></td>
           </tr>
         <% }) %>
       </tbody>
